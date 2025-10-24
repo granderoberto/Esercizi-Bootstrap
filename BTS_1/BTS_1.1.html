@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BTS_1.1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+      body { background: #f6f7fb; }
+      pre { background:#0f172a; color:#e2e8f0; padding:1rem; border-radius:.5rem; }
+      code { color:#e2e8f0; }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4">
+      <h1 class="mb-4">Esercizio BTS_1.1</h1>
+      <ol class="lh-lg">
+        <li>
+          <strong>A cosa serve Bootstrap?</strong><br>
+          Bootstrap è un framework CSS (con componenti JS opzionali) che velocizza lo sviluppo di interfacce responsive e accessibili, fornendo griglia, componenti e utility pronte all'uso.
+        </li>
+        <li class="mt-3">
+          <strong>Cosa devi importare per creare una pagina web con Bootstrap?</strong>
+          <p class="mb-1">Minimo il CSS. Per i componenti interattivi, anche il bundle JS.</p>
+          <div class="mb-2"><em>(Usare &amp;lt; e &amp;gt; per il codice nelle risposte)</em></div>
+          <div>
+            <p class="mb-1">CSS:</p>
+            <pre><code>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;</code></pre>
+            <p class="mb-1">JS (opzionale, per componenti come Modal, Collapse, ecc.):</p>
+            <pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+          </div>
+        </li>
+        <li class="mt-3">
+          <strong>Cos’è un CDN? Che vantaggi comporta rispetto a scaricare Bootstrap sul tuo sito?</strong><br>
+          Un CDN (Content Delivery Network) è una rete di server distribuiti che consegna file statici da nodi vicini all’utente. Vantaggi: caricamenti più rapidi, caching condiviso fra siti, meno banda sul tuo hosting, setup semplice senza build.
+        </li>
+        <li class="mt-3">
+          <strong>A cosa serve questo attributo del tag meta?</strong><br>
+          <code>content="width=device-width, initial-scale=1"</code><br>
+          Imposta la larghezza del viewport uguale a quella del dispositivo e il livello di zoom iniziale a 1. È essenziale per il responsive design, altrimenti la griglia non si adatta correttamente su mobile.
+        </li>
+        <li class="mt-3">
+          <strong>Che differenza c’è tra <code>.container</code> e <code>.container-fluid</code>?</strong><br>
+          <code>.container</code> ha larghezze massime fisse che cambiano ai breakpoint; resta centrato e non occupa l’intera larghezza oltre certi valori. <code>.container-fluid</code> è sempre al 100% di larghezza a qualsiasi breakpoint.
+          <div class="mt-2">Vedi la pagina di prova: <a href="BTS_1.1.1.html">BTS_1.1.1.html</a></div>
+        </li>
+      </ol>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

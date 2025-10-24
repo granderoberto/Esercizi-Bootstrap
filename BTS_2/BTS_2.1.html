@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BTS_2.1 · Bootstrap – Tipografia</title>
+  <!-- Bootstrap 5.3 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <style>
+    .demo-card{border-radius:1rem}
+    .hint{font-size:.9rem}
+  </style>
+</head>
+<body class="bg-light">
+  <header class="py-4 bg-white border-bottom mb-4">
+    <div class="container">
+      <h1 class="h3 mb-1">BTS_2.1 · Tipografia & Utilità testo</h1>
+      <p class="text-muted mb-0">Le risposte sono organizzate in un layout a griglia <em>responsive</em> (rif. BTS_1.2).</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="row g-4">
+      <!-- Q1–Q3 -->
+      <div class="col-12 col-lg-6">
+        <section class="p-4 bg-white shadow-sm demo-card">
+          <h2 class="h4">Q&A</h2>
+          <ol class="mb-0">
+            <li class="mb-3">
+              <strong>Qual è la dimensione del testo di default di Bootstrap?</strong><br>
+              <code>1rem</code> (di norma 16px) sul <code>&lt;body&gt;</code>.
+            </li>
+            <li class="mb-3">
+              <strong>Qual è il font di default di Bootstrap?</strong><br>
+              Stack di sistema: <code>system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"</code>.
+            </li>
+            <li class="mb-0">
+              <strong>Quali sono il margine superiore e inferiore di un paragrafo?</strong><br>
+              <code>margin-top: 0;</code> e <code>margin-bottom: 1rem;</code>.
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <!-- Q4: div con blockquote, abbr, mark -->
+      <div class="col-12 col-lg-6">
+        <section class="p-4 bg-white shadow-sm demo-card">
+          <h2 class="h4">Div con <code>blockquote</code>, <code>abbr</code>, <code>mark</code></h2>
+          <div class="p-3 border rounded-3">
+            <h3 class="display-5 fw-semibold">Cose interessanti</h3>
+            <p>Ieri ho bevuto <mark>molto</mark> tè.</p>
+            <p>Questo mi rende <abbr title="Non Va Ok">NVO</abbr> 😅</p>
+            <p class="h5 text-primary">Wawaahwhawhawnahwahnahhahahawahwww!</p>
+            <blockquote class="blockquote mt-3">
+              <p class="mb-1">Dietro le quinte di Star Wars!</p>
+              <footer class="blockquote-footer">Chewbacca <cite title="Fonte">in backstage</cite></footer>
+            </blockquote>
+            <p class="mt-3 mb-1">Ecco una lista di cose che mi rende nervoso:</p>
+            <dl class="mb-0">
+              <dt class="fw-bold">Coffee</dt>
+              <dd class="text-muted">black hot drink</dd>
+              <dt class="fw-bold">Milk</dt>
+              <dd class="text-muted">white cold drink</dd>
+              <dt class="fw-bold">Chewbacca</dt>
+              <dd class="text-muted">the co-pilot of the Millennium Falcon</dd>
+            </dl>
+          </div>
+          <p class="hint text-muted mt-2">Suggerimento: usa <code>.blockquote</code> e <code>.blockquote-footer</code> per la citazione; <code>abbr[title]</code> mostra il tooltip al passaggio.</p>
+        </section>
+      </div>
+
+      <!-- Q5: paragrafi con caratteristiche -->
+      <div class="col-12">
+        <section class="p-4 bg-white shadow-sm demo-card">
+          <h2 class="h4">Paragrafi con caratteristiche richieste</h2>
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <p class="fw-bold mb-0">a) Questo paragrafo è <strong>bold</strong> grazie a <code>.fw-bold</code>.</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <p class="fst-italic mb-0">b) Questo paragrafo è in <em>italic</em> grazie a <code>.fst-italic</code>.</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <p class="fw-light mb-0">c) Questo paragrafo è <span class="fw-light">light</span> grazie a <code>.fw-light</code>.</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <p class="text-center mb-0">d) Questo testo è centrato con <code>.text-center</code>.</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <p class="text-end mb-0">e) Questo testo è allineato a destra con <code>.text-end</code>.</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <p class="mb-1">f) Lista inline di cose che mi innervosiscono:</p>
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">Code infinite</li>
+                <li class="list-inline-item">Batteria scarica</li>
+                <li class="list-inline-item">Spoiler</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-4 text-center text-muted small">
+    <div class="container">Bootstrap 5.3 · BTS_2.1</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
