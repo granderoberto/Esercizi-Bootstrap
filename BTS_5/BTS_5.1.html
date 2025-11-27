@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gelateria Dolce Vita - I Migliori Gelati Artigianali</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      /* ========================================
+         PALETTE COLORI PERSONALIZZATA BOOTSTRAP
+         ======================================== */
+      
+      /* PRIMARY - Azzurro Gelato */
+      .bg-primary { background-color: #4ECDC4 !important; }
+      .text-primary { color: #4ECDC4 !important; }
+      .btn-primary {
+        background-color: #4ECDC4;
+        border-color: #4ECDC4;
+        color: #212529;
+      }
+      .btn-primary:hover {
+        background-color: #3db8ae;
+        border-color: #3db8ae;
+        color: #212529;
+      }
+      .border-primary { border-color: #4ECDC4 !important; }
+      .navbar-dark .navbar-brand,
+      .navbar-dark .navbar-nav .nav-link {
+        color: #212529;
+      }
+      .navbar-dark .navbar-nav .nav-link:hover {
+        color: #000;
+      }
+      
+      /* SUCCESS - Verde Pistacchio */
+      .bg-success { background-color: #95D5B2 !important; }
+      .text-success { color: #95D5B2 !important; }
+      .btn-success {
+        background-color: #95D5B2;
+        border-color: #95D5B2;
+        color: #212529;
+      }
+      .btn-success:hover {
+        background-color: #7bc29f;
+        border-color: #7bc29f;
+        color: #212529;
+      }
+      .alert-success {
+        background-color: #95D5B2;
+        border-color: #95D5B2;
+        color: #212529;
+      }
+      
+      /* INFO - Blu Latte */
+      .bg-info { background-color: #5A9FD4 !important; }
+      .text-info { color: #5A9FD4 !important; }
+      .btn-info {
+        background-color: #5A9FD4;
+        border-color: #5A9FD4;
+        color: white;
+      }
+      .btn-info:hover {
+        background-color: #4589c0;
+        border-color: #4589c0;
+        color: white;
+      }
+      
+      /* WARNING - Arancio Mandarino */
+      .bg-warning { background-color: #FFB703 !important; }
+      .text-warning { color: #FFB703 !important; }
+      .btn-warning {
+        background-color: #FFB703;
+        border-color: #FFB703;
+        color: #212529;
+      }
+      .btn-warning:hover {
+        background-color: #e6a302;
+        border-color: #e6a302;
+        color: #212529;
+      }
+      .alert-warning {
+        background-color: #FFB703;
+        border-color: #FFB703;
+        color: #212529;
+      }
+      
+      /* DANGER - Rosso Fragola */
+      .bg-danger { background-color: #E63946 !important; }
+      .text-danger { color: #E63946 !important; }
+      .btn-danger {
+        background-color: #E63946;
+        border-color: #E63946;
+        color: white;
+      }
+      .btn-danger:hover {
+        background-color: #d32130;
+        border-color: #d32130;
+        color: white;
+      }
+      
+      /* SECONDARY - Grigio Cioccolato */
+      .bg-secondary { background-color: #6C757D !important; }
+      .text-secondary { color: #6C757D !important; }
+      .btn-secondary {
+        background-color: #6C757D;
+        border-color: #6C757D;
+        color: white;
+      }
+      .btn-secondary:hover {
+        background-color: #5a6268;
+        border-color: #5a6268;
+        color: white;
+      }
+      
+      /* DARK - Marrone Cacao */
+      .bg-dark { background-color: #212529 !important; }
+      .text-dark { color: #212529 !important; }
+      
+      /* LIGHT - Crema */
+      .bg-light { background-color: #F8F9FA !important; }
+      .text-light { color: #F8F9FA !important; }
+      
+      /* ========================================
+         STILI AGGIUNTIVI
+         ======================================== */
+      
+      body {
+        background-color: white;
+        color: #212529;
+        padding-top: 76px;
+      }
+      
+      .hero-section {
+        background: linear-gradient(135deg, #4ECDC4 0%, #5A9FD4 100%);
+        color: white;
+        padding: 60px 0;
+        margin-bottom: 40px;
+      }
+      
+      .card {
+        transition: transform 0.3s;
+        height: 100%;
+      }
+      
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      }
+      
+      .flavor-card {
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      
+      .flavor-img {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+      }
+      
+      .footer {
+        background-color: #212529;
+        color: #F8F9FA;
+        padding: 30px 0;
+        margin-top: 60px;
+      }
+      
+      .navbar {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      
+      .price-badge {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      
+      @media (max-width: 767.98px) {
+        .hero-section {
+          padding: 40px 0;
+        }
+        
+        .hero-section h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">🍦 Gelateria Dolce Vita</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border-color: #212529;">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gusti">I Nostri Gusti</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contatti">Contatti</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ALERT PROMOZIONALE -->
+    <div class="container mt-3">
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>🎉 Offerta Speciale!</strong> Ogni mercoledì: 2x1 su tutti i gusti alla frutta! 
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8 col-md-12">
+            <h1 class="display-4 fw-bold mb-3">Il Gelato Artigianale che Ami</h1>
+            <p class="lead mb-4">
+              Da tre generazioni produciamo gelato artigianale con ingredienti 100% naturali e ricette tradizionali.
+              Vieni a scoprire i nostri oltre 30 gusti sempre freschi!
+            </p>
+            <a href="#gusti" class="btn btn-light btn-lg me-2">Scopri i Gusti</a>
+            <a href="#contatti" class="btn btn-success btn-lg">Dove Siamo</a>
+          </div>
+          <div class="col-lg-4 col-md-12 text-center mt-4 mt-lg-0">
+            <div class="display-1">🍨</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEZIONE VANTAGGI -->
+    <div class="container mb-5">
+      <div class="row text-center">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="card border-success flavor-card">
+            <div class="card-body">
+              <div class="display-4 mb-3">🌱</div>
+              <h5 class="card-title text-success">100% Naturale</h5>
+              <p class="card-text">Solo ingredienti naturali, senza conservanti o coloranti artificiali.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="card border-info flavor-card">
+            <div class="card-body">
+              <div class="display-4 mb-3">👨‍🍳</div>
+              <h5 class="card-title text-info">Artigianale</h5>
+              <p class="card-text">Produzione giornaliera fresca con ricette tramandate da generazioni.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-warning flavor-card">
+            <div class="card-body">
+              <div class="display-4 mb-3">🏆</div>
+              <h5 class="card-title text-warning">Premiato</h5>
+              <p class="card-text">Vincitori del "Gelato d'Oro" 2024 per il miglior gelato artigianale.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALERT INFORMATIVO -->
+    <div class="container mb-4">
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">🌟 Novità di Stagione</h4>
+        <p class="mb-0">Prova i nostri nuovi gusti autunnali: Castagna, Zucca Speziata e Fico e Noci!</p>
+      </div>
+    </div>
+
+    <!-- SEZIONE GUSTI -->
+    <section id="gusti" class="container mb-5">
+      <h2 class="text-center mb-5">I Nostri Gusti Più Amati</h2>
+      
+      <div class="row g-4">
+        <!-- Gusto 1 -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card flavor-card border-primary">
+            <div class="flavor-img bg-primary"></div>
+            <div class="card-body">
+              <h5 class="card-title">Stracciatella</h5>
+              <p class="card-text">Crema di latte fresco con scaglie di cioccolato fondente.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-primary price-badge">€3.50</span>
+                <button class="btn btn-sm btn-primary">Ordina</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gusto 2 -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card flavor-card border-success">
+            <div class="flavor-img bg-success"></div>
+            <div class="card-body">
+              <h5 class="card-title">Pistacchio di Bronte</h5>
+              <p class="card-text">Autentico pistacchio siciliano DOP, intenso e cremoso.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-success price-badge">€4.50</span>
+                <button class="btn btn-sm btn-success">Ordina</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gusto 3 -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card flavor-card border-danger">
+            <div class="flavor-img bg-danger"></div>
+            <div class="card-body">
+              <h5 class="card-title">Fragola Fresca</h5>
+              <p class="card-text">Fragole fresche di stagione, dolci e profumate.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-danger price-badge">€3.80</span>
+                <button class="btn btn-sm btn-danger">Ordina</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gusto 4 -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card flavor-card border-warning">
+            <div class="flavor-img bg-warning"></div>
+            <div class="card-body">
+              <h5 class="card-title">Mandarino</h5>
+              <p class="card-text">Sorbetto fresco al mandarino siciliano, agrumato e vivace.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-warning price-badge">€3.50</span>
+                <button class="btn btn-sm btn-warning">Ordina</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gusto 5 -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card flavor-card border-dark">
+            <div class="flavor-img bg-dark"></div>
+            <div class="card-body">
+              <h5 class="card-title">Cioccolato Fondente</h5>
+              <p class="card-text">Cioccolato Ecuador 75%, intenso e vellutato.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-dark price-badge">€3.80</span>
+                <button class="btn btn-sm btn-dark">Ordina</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gusto 6 -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card flavor-card border-info">
+            <div class="flavor-img bg-info"></div>
+            <div class="card-body">
+              <h5 class="card-title">Puffo</h5>
+              <p class="card-text">Il preferito dei bambini! Cremoso e colorato.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-info price-badge">€3.20</span>
+                <button class="btn btn-sm btn-info">Ordina</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gusto 7 -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card flavor-card border-secondary">
+            <div class="flavor-img bg-secondary"></div>
+            <div class="card-body">
+              <h5 class="card-title">Cookies & Cream</h5>
+              <p class="card-text">Crema con biscotti Oreo sbriciolati.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-secondary price-badge">€3.90</span>
+                <button class="btn btn-sm btn-secondary">Ordina</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gusto 8 -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card flavor-card border-light">
+            <div class="flavor-img bg-light"></div>
+            <div class="card-body">
+              <h5 class="card-title">Fior di Latte</h5>
+              <p class="card-text">La base perfetta: latte fresco italiano e vaniglia.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-secondary price-badge">€3.00</span>
+                <button class="btn btn-sm btn-outline-dark">Ordina</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEZIONE ORARI E CONTATTI -->
+    <section id="contatti" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Vieni a Trovarci</h2>
+        <div class="row">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4 class="card-title mb-4">📍 Dove Siamo</h4>
+                <p class="card-text">
+                  <strong>Indirizzo:</strong><br>
+                  Via Roma 123<br>
+                  00100 Roma (RM)<br>
+                  Italia
+                </p>
+                <p class="card-text mt-4">
+                  <strong>📞 Telefono:</strong> +39 06 1234567<br>
+                  <strong>📧 Email:</strong> info@gelateriadolcevita.it
+                </p>
+                <div class="mt-4">
+                  <a href="#" class="btn btn-primary me-2">📱 Chiamaci</a>
+                  <a href="#" class="btn btn-info">🗺️ Indicazioni</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4 class="card-title mb-4">🕐 Orari di Apertura</h4>
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td><strong>Lunedì - Venerdì:</strong></td>
+                      <td>12:00 - 23:00</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Sabato:</strong></td>
+                      <td>10:00 - 24:00</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Domenica:</strong></td>
+                      <td>10:00 - 23:00</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="alert alert-info mt-4" role="alert">
+                  <small><strong>Info:</strong> Durante l'estate siamo aperti tutti i giorni dalle 10:00 alle 24:00!</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEZIONE TESTIMONIANZE -->
+    <div class="container my-5">
+      <h2 class="text-center mb-5">Cosa Dicono di Noi</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="mb-2">
+                <span class="text-warning">⭐⭐⭐⭐⭐</span>
+              </div>
+              <p class="card-text">"Il miglior gelato di Roma! Il pistacchio è semplicemente divino."</p>
+              <footer class="blockquote-footer">Maria R.</footer>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="mb-2">
+                <span class="text-warning">⭐⭐⭐⭐⭐</span>
+              </div>
+              <p class="card-text">"Gusti sempre freschi e personale gentilissimo. Ci torniamo sempre!"</p>
+              <footer class="blockquote-footer">Luca B.</footer>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="mb-2">
+                <span class="text-warning">⭐⭐⭐⭐⭐</span>
+              </div>
+              <p class="card-text">"Ingredienti di qualità e sapori autentici. Consigliatissimo!"</p>
+              <footer class="blockquote-footer">Sofia M.</footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3 mb-md-0">
+            <h5>Gelateria Dolce Vita</h5>
+            <p class="text-light">Il gelato artigianale della tradizione dal 1950.</p>
+          </div>
+          <div class="col-md-4 mb-3 mb-md-0">
+            <h5>Link Utili</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-light text-decoration-none">Privacy Policy</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Cookie Policy</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Lavora con Noi</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Seguici</h5>
+            <div>
+              <a href="#" class="btn btn-outline-light btn-sm me-2">Facebook</a>
+              <a href="#" class="btn btn-outline-light btn-sm me-2">Instagram</a>
+              <a href="#" class="btn btn-outline-light btn-sm">TikTok</a>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-light">
+        <div class="text-center text-light">
+          <small>&copy; 2025 Gelateria Dolce Vita. Tutti i diritti riservati.</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

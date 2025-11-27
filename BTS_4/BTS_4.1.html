@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BTS_4.1 - Componenti Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body { 
+        background-color: #f8f9fa; 
+        padding-top: 70px;
+      }
+      .section-title {
+        background-color: #e9ecef;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .component-box {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Bootstrap 5</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#badges">Badges</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pagination">Pagination</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#list-group">List Group</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cards">Cards</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#collapse">Collapse</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1 class="text-center my-4">Esercizio BTS_4.1</h1>
+      <p class="text-center text-muted mb-5">Esempi di componenti Bootstrap 5</p>
+
+      <!-- SEZIONE BADGES -->
+      <div id="badges" class="row mb-5">
+        <div class="col-12">
+          <h2 class="section-title">1. BADGES (Distintivi)</h2>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="component-box">
+            <h3 class="h5 mb-3">Badges di Base</h3>
+            <p>Badge primario: <span class="badge bg-primary">Primary</span></p>
+            <p>Badge secondario: <span class="badge bg-secondary">Secondary</span></p>
+            <p>Badge successo: <span class="badge bg-success">Success</span></p>
+            <p>Badge pericolo: <span class="badge bg-danger">Danger</span></p>
+            <p>Badge avviso: <span class="badge bg-warning text-dark">Warning</span></p>
+            <p>Badge info: <span class="badge bg-info text-dark">Info</span></p>
+            <p>Badge chiaro: <span class="badge bg-light text-dark">Light</span></p>
+            <p>Badge scuro: <span class="badge bg-dark">Dark</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+          <div class="component-box">
+            <h3 class="h5 mb-3">Badges Arrotondati (Pills)</h3>
+            <p>
+              <span class="badge rounded-pill bg-primary">Primary Pill</span>
+              <span class="badge rounded-pill bg-success">Success Pill</span>
+              <span class="badge rounded-pill bg-danger">Danger Pill</span>
+            </p>
+            <h3 class="h5 mb-3 mt-4">Badges in Bottoni</h3>
+            <button type="button" class="btn btn-primary">
+              Notifiche <span class="badge bg-danger">9+</span>
+            </button>
+            <button type="button" class="btn btn-secondary">
+              Messaggi <span class="badge bg-success">3</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEZIONE PAGINATION -->
+      <div id="pagination" class="row mb-5">
+        <div class="col-12">
+          <h2 class="section-title">2. PAGINATION (Paginazione)</h2>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+          <div class="component-box">
+            <h3 class="h5 mb-3">Paginazione Standard</h3>
+            <nav aria-label="Esempio di paginazione">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Precedente</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Successivo</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+          <div class="component-box">
+            <h3 class="h5 mb-3">Paginazione con Icone e Disabilitata</h3>
+            <nav aria-label="Esempio con icone">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">&laquo;</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">&raquo;</a>
+                </li>
+              </ul>
+            </nav>
+            <h3 class="h5 mb-3 mt-4">Dimensioni Diverse</h3>
+            <nav aria-label="Paginazione piccola">
+              <ul class="pagination pagination-sm">
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEZIONE LIST GROUP -->
+      <div id="list-group" class="row mb-5">
+        <div class="col-12">
+          <h2 class="section-title">3. LIST GROUP (Gruppi di Liste)</h2>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="component-box">
+            <h3 class="h5 mb-3">Lista Semplice</h3>
+            <ul class="list-group">
+              <li class="list-group-item">Primo elemento</li>
+              <li class="list-group-item">Secondo elemento</li>
+              <li class="list-group-item">Terzo elemento</li>
+              <li class="list-group-item">Quarto elemento</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="component-box">
+            <h3 class="h5 mb-3">Lista Attiva e Disabilitata</h3>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action active">
+                Elemento attivo
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                Secondo elemento
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                Terzo elemento
+              </a>
+              <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1">
+                Elemento disabilitato
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="component-box">
+            <h3 class="h5 mb-3">Lista con Colori</h3>
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-primary">Primario</li>
+              <li class="list-group-item list-group-item-success">Successo</li>
+              <li class="list-group-item list-group-item-danger">Pericolo</li>
+              <li class="list-group-item list-group-item-warning">Avviso</li>
+              <li class="list-group-item list-group-item-info">Info</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-12 mb-4">
+          <div class="component-box">
+            <h3 class="h5 mb-3">Lista con Badge</h3>
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Messaggi non letti
+                <span class="badge bg-primary rounded-pill">14</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Notifiche
+                <span class="badge bg-danger rounded-pill">5</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Aggiornamenti
+                <span class="badge bg-success rounded-pill">2</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEZIONE CARDS -->
+      <div id="cards" class="row mb-5">
+        <div class="col-12">
+          <h2 class="section-title">4. CARDS (Carte)</h2>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/350x200/007bff/ffffff?text=Card+Image" class="card-img-top" alt="Immagine card">
+            <div class="card-body">
+              <h5 class="card-title">Titolo Card</h5>
+              <p class="card-text">Questa è una card di base con immagine, titolo, testo e un bottone di azione.</p>
+              <a href="#" class="btn btn-primary">Vai</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="card-header">
+              Card con Header
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Titolo Speciale</h5>
+              <p class="card-text">Card con header e footer personalizzati.</p>
+              <a href="#" class="btn btn-success">Azione</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 giorni fa
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card text-white bg-primary">
+            <div class="card-header">Header Colorato</div>
+            <div class="card-body">
+              <h5 class="card-title">Card Colorata</h5>
+              <p class="card-text">Questa card ha uno sfondo colorato con testo bianco.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card border-success">
+            <div class="card-header bg-transparent border-success">Header Trasparente</div>
+            <div class="card-body text-success">
+              <h5 class="card-title">Card con Bordo</h5>
+              <p class="card-text">Card con bordo colorato e sfondo trasparente.</p>
+            </div>
+            <div class="card-footer bg-transparent border-success">Footer</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Card con Lista</h5>
+              <p class="card-text">Una card può contenere anche liste:</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Elemento 1</li>
+              <li class="list-group-item">Elemento 2</li>
+              <li class="list-group-item">Elemento 3</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Card Centrata</h5>
+              <p class="card-text">Tutto il contenuto di questa card è centrato.</p>
+              <a href="#" class="btn btn-warning">Scopri</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEZIONE COLLAPSE -->
+      <div id="collapse" class="row mb-5">
+        <div class="col-12">
+          <h2 class="section-title">5. COLLAPSE (Contenuto Collassabile)</h2>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+          <div class="component-box">
+            <h3 class="h5 mb-3">Collapse con Bottone</h3>
+            <p>
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1">
+                Mostra/Nascondi Contenuto
+              </button>
+            </p>
+            <div class="collapse" id="collapseExample1">
+              <div class="card card-body">
+                Questo è il contenuto collassabile. Può contenere qualsiasi tipo di elemento HTML: testo, immagini, liste, ecc.
+                Il collapse permette di risparmiare spazio mostrando/nascondendo contenuto su richiesta dell'utente.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+          <div class="component-box">
+            <h3 class="h5 mb-3">Collapse con Link</h3>
+            <p>
+              <a class="btn btn-success" data-bs-toggle="collapse" href="#collapseExample2" role="button">
+                Toggle via Link
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample2">
+              <div class="card card-body">
+                Il collapse può essere attivato anche tramite link invece che bottoni.
+                Questo offre maggiore flessibilità nel design dell'interfaccia.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12 mb-4">
+          <div class="component-box">
+            <h3 class="h5 mb-3">Accordion (Fisarmonica)</h3>
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                    Sezione Accordion #1
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Questa è la prima sezione.</strong> L'accordion è un tipo speciale di collapse dove solo una sezione
+                    può essere aperta alla volta. Quando si apre una sezione, le altre si chiudono automaticamente.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                    Sezione Accordion #2
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Questa è la seconda sezione.</strong> Gli accordion sono molto utili per FAQ, menu laterali,
+                    e qualsiasi situazione dove si vuole organizzare contenuto in sezioni espandibili.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                    Sezione Accordion #3
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Questa è la terza sezione.</strong> L'accordion migliora l'esperienza utente permettendo di
+                    navigare grandi quantità di informazioni in uno spazio ridotto.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOTA FINALE -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">📚 Nota di Studio</h4>
+            <p class="mb-0">
+              Questa pagina dimostra i principali componenti di Bootstrap 5: <strong>Badges</strong>, <strong>Pagination</strong>, 
+              <strong>List Group</strong>, <strong>Cards</strong>, <strong>Collapse</strong> e <strong>NavBar</strong>.
+              Ogni componente è interattivo e può essere personalizzato con diverse classi CSS di Bootstrap.
+              Prova a ridimensionare la finestra del browser per vedere il comportamento responsive della griglia!
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
